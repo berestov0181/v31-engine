@@ -12,19 +12,19 @@ BEFORE measurement, and every failed stake is documented.
 | T3/T3b market run BTC/ETH 1h | honest negative: major-pair spread carries no edge after fees | PF 0.60 / 0.45, documented |
 
 ## Error model (core insight)
-db ~ eps·ū²·√k; the sigma channel amplifies ×64 via sse = syy_c − b²·sxx_c.
-Any floating-error corridor MUST include √k accumulation and 1/σ_step² scaling.
-Single-step eps models undershoot by ~1000×.
+db ~ eps*u_bar^2*sqrt(k); the sigma channel amplifies x64 via sse = syy_c - b^2*sxx_c.
+Any floating-error corridor MUST include sqrt(k) accumulation and 1/sigma_step^2 scaling.
+Single-step eps models undershoot by ~1000x.
 
 ## Files
-- `engine_v31.py` — the core. Guards: degenerate-x by window dispersion vs tick size; beta collapse.
-- `test_v31.py` — verification suite T1/T2
-- `v31_spec.md` — full specification + falsification protocol H1–H6
-- `t3_market.py` — market verification harness (BTC/ETH, Bybit 1h)
-- `AGENT_BRIEF.md` — standing instructions for AI agents working on this code
+- engine_v31.py — the core. Guards: degenerate-x by window dispersion vs tick size; beta collapse.
+- test_v31.py — verification suite T1/T2
+- v31_spec.md — full specification + falsification protocol H1-H6
+- t3_market.py — market verification harness (BTC/ETH, Bybit 1h)
+- AGENT_BRIEF.md — standing instructions for AI agents working on this code
 
 ## Method
-Stake → measure → admit → registry. Negative results are results.
+Stake -> measure -> admit -> registry. Negative results are results.
 
 ## Author
 Andrey Berestof
